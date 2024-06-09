@@ -83,7 +83,7 @@ document.getElementById('busqueda').addEventListener('submit', function(event) {
     event.preventDefault(); // Evitar el envío del formulario
 
     // Obtener el valor del campo de búsqueda
-    var searchTerm = document.getElementById('busquedaInput').value.trim();
+    var searchTerm = document.getElementById('busquedaInput').value.trim().toLowerCase();
 
 if (searchTerm == ""){
     alert("Ingresa un valor para poder buscarlo!")
