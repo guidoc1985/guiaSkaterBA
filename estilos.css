@@ -1,0 +1,29 @@
+#map {
+    height: 80vh;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+body{
+    background-image:url(img/pexels-markusspiske-2004166.jpg);
+}
+
+footer{
+    background-color: black;
+}
+
+h2{
+    color: aliceblue;
+    font-size: x-large;
+    align-items: center;
+    margin-left: 5%;
+    padding: 5%;
+}
+
+#busqueda{
+    margin-left: 30%;
+    display: flex;
+
+}
