@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nombre: "14 de Agosto DIY",
             coords: [-34.726609637953445, -58.25982948970078],
             descripcion: "Primer DIY de la ciudad de Quilmes",
-            foto: "https://gozamedia.com.ar/wp-content/uploads/2020/05/DSCF4145-gozamedia-1024x684.jpg",
+            foto: "img/14.jpg",
             enlace: "https://www.instagram.com/14deagostodiy/"
         },
         {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nombre: "Los barriers",
             coords: [-34.70844816980061, -58.28333958865184],
             descripcion: "DIY en la estación de Bernal #Zanel4ever",
-            foto: "https://gozamedia.com.ar/wp-content/uploads/2016/02/IMG_0504.jpg",
+            foto: "img/barriers.png",
             enlace: "https://www.instagram.com/barrierbernaldiy/?hl=es"
 
         },
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nombre: "Slappy DIY Bernal",
             coords: [-34.70898157093809, -58.28208392848586],
             descripcion: "pasillo con slappies, bordes y muchos obstáculos",
-            foto: "https://gozamedia.com.ar/wp-content/uploads/2018/09/IMG_2736.jpg",
+            foto: "img/SLAPPY.png",
             enlace: "https://www.instagram.com/slappydiybernal/"
            
         },
@@ -67,9 +67,41 @@ document.addEventListener('DOMContentLoaded', function () {
             foto: "https://hechoenquilmes.com/wp-content/uploads/2021/04/mayra-inauguro-el-skatepark-municipal-del-parque-de-la-ciudad-3.jpeg?w=660&h=330&crop=1",
             enlace: "https://www.instagram.com/quilmeskatepark_club/?hl=es"
            
-        }
+        },
+        {
 
-    ];
+            nombre: "Don Bosco Mini Ramp",
+            coords: [-34.70329892684533, -58.29533631120939],
+            descripcion: "Mitica rampa de Don Bosco",
+            foto: "img/donbosco.png",
+            enlace: "http://gozamedia.com.ar/25-anos-de-don-bosco-el-video/"
+
+
+            
+        },
+{
+        nombre: "Nuevo skatepark Avellaneda",
+        coords: [-34.67116381649621, -58.370053244206886],
+        descripcion: "Skatepark muy completo con street y bowl",
+        foto: "img/avellaneda.png",
+        enlace: "https://www.instagram.com/olimpico_avellapark/?img_index=1"
+
+
+        
+    },
+
+    {
+        nombre: "Coto Sarandí",
+        coords: [-34.6840046017249, -58.34227910500267],
+        descripcion: "baranda y escalera, solo habilitada los feriados",
+        foto: "img/coto.png",
+        enlace: "https://www.skatehype.com/v/18256/backside-360-escaleras-coto-sarandi-cristian-aielo"
+
+
+        
+    },
+
+    ]
 
     // Añadir marcadores para cada lugar
     lugares.forEach(function(lugar) {
