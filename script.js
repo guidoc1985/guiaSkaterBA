@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nombre: "14 de Agosto DIY",
             coords: [-34.726609637953445, -58.25982948970078],
             descripcion: "Primer DIY de la ciudad de Quilmes",
-            foto: "http://gozamedia.com.ar/wp-content/uploads/2020/05/DSCF4145-gozamedia-1024x684.jpg",
+            foto: "https://gozamedia.com.ar/wp-content/uploads/2020/05/DSCF4145-gozamedia-1024x684.jpg",
             enlace: "https://www.instagram.com/14deagostodiy/"
         },
         {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nombre: "Los barriers",
             coords: [-34.70844816980061, -58.28333958865184],
             descripcion: "DIY en la estación de Bernal #Zanel4ever",
-            foto: "http://gozamedia.com.ar/wp-content/uploads/2016/02/IMG_0504.jpg",
+            foto: "https://gozamedia.com.ar/wp-content/uploads/2016/02/IMG_0504.jpg",
             enlace: "https://www.instagram.com/barrierbernaldiy/?hl=es"
 
         },
@@ -56,8 +56,16 @@ document.addEventListener('DOMContentLoaded', function () {
             nombre: "Slappy DIY Bernal",
             coords: [-34.70898157093809, -58.28208392848586],
             descripcion: "pasillo con slappies, bordes y muchos obstáculos",
-            foto: "http://gozamedia.com.ar/wp-content/uploads/2018/09/IMG_2736.jpg",
+            foto: "https://gozamedia.com.ar/wp-content/uploads/2018/09/IMG_2736.jpg",
             enlace: "https://www.instagram.com/slappydiybernal/"
+           
+        },
+        {
+            nombre: "Quilmes Skatepark",
+            coords: [ -34.74227091777476, -58.250675064241065],
+            descripcion: "skatepark público con sector street y bowl",
+            foto: "https://hechoenquilmes.com/wp-content/uploads/2021/04/mayra-inauguro-el-skatepark-municipal-del-parque-de-la-ciudad-3.jpeg?w=660&h=330&crop=1",
+            enlace: "https://www.instagram.com/quilmeskatepark_club/?hl=es"
            
         }
 
