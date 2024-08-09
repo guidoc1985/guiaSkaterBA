@@ -1,0 +1,199 @@
+ [
+    {
+        "nombre": "Eh park skatepark",
+        "coords": [-34.71319167517402, -58.27251236595334],
+        "descripcion": "El templo del skate argentino",
+        "foto": "https://scontent.faep9-2.fna.fbcdn.net/v/t39.30808-6/326359224_853878279241313_3307608468837664815_n.jpg?stp=dst-jpg_s960x960&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=U8Ab9RAJcTEQ7kNvgFMyAp-&_nc_ht=scontent.faep9-2.fna&oh=00_AYAQMAqo7AakhcOi_w89CLvizSsPky7q_-2qC2j457Rj2Q&oe=666B0486",
+        "enlace": "https://www.ehpark.com/"
+    },
+    {
+        "nombre": "14 de Agosto DIY",
+        "coords": [-34.726609637953445, -58.25982948970078],
+        "descripcion": "Primer DIY de la ciudad de Quilmes",
+        "foto": "img/14.jpg",
+        "enlace": "https://www.instagram.com/14deagostodiy/"
+    },
+    {
+        "nombre": "Ribera skatepark Quilmes",
+        "coords": [-34.70696745755898, -58.23068469489442],
+        "descripcion": "Pista en las orillas del rio de la plata",
+        "foto": "img/luchi.png",
+        "enlace": "https://www.instagram.com/riberaskateparkquilmes/?__d=11"
+    },
+    {
+        "nombre": "Los barriers",
+        "coords": [-34.70844816980061, -58.28333958865184],
+        "descripcion": "DIY en la estación de Bernal #Zanel4ever",
+        "foto": "img/barriers.png",
+        "enlace": "https://www.instagram.com/barrierbernaldiy/?hl=es"
+
+    },
+    {
+        "nombre": "Plaza suiza slappy y miniramp",
+        "coords": [-34.71265192471518, -58.27112964204852],
+        "descripcion": "plaza con flat amplio, miniramp y slappy",
+        "foto": "img/suiza.png"
+       
+    },
+    {
+        "nombre": "Slappy DIY Bernal",
+        "coords": [-34.70898157093809, -58.28208392848586],
+        "descripcion": "pasillo con slappies, bordes y muchos obstáculos",
+        "foto": "img/SLAPPY.png",
+        "enlace": "https://www.instagram.com/slappydiybernal/"
+       
+    },
+    {
+        "nombre": "Quilmes Skatepark",
+        "coords": [ -34.74227091777476, -58.250675064241065],
+        "descripcion": "skatepark público con sector street y bowl",
+        "foto": "https://hechoenquilmes.com/wp-content/uploads/2021/04/mayra-inauguro-el-skatepark-municipal-del-parque-de-la-ciudad-3.jpeg?w=660&h=330&crop=1",
+        "enlace": "https://www.instagram.com/quilmeskatepark_club/?hl=es"
+       
+    },
+    {
+
+        "nombre": "Don Bosco Mini Ramp",
+        "coords": [-34.70329892684533, -58.29533631120939],
+        "descripcion": "Mitica rampa de Don Bosco",
+        "foto": "img/donbosco.png",
+        "enlace": "http://gozamedia.com.ar/25-anos-de-don-bosco-el-video/"
+
+
+        
+    },
+{
+    "nombre": "Nuevo skatepark Avellaneda",
+    "coords": [-34.67116381649621, -58.370053244206886],
+    "descripcion": "Skatepark muy completo con street y bowl",
+    "foto": "img/avellaneda.png",
+    "enlace": "https://www.instagram.com/olimpico_avellapark/?img_index=1"
+
+
+    
+},
+
+{
+    "nombre": "Coto Sarandí",
+    "coords": [-34.6840046017249, -58.34227910500267],
+    "descripcion": "baranda y escalera, solo habilitada los feriados",
+    "foto": "img/coto.png",
+    "enlace": "https://www.skatehype.com/v/18256/backside-360-escaleras-coto-sarandi-cristian-aielo"
+
+
+    
+},
+
+{
+    "nombre": "Skatepark Puerto Madero",
+    "coords": [-34.61386071751967, -58.36635512408252],
+    "descripcion": "Pista con obsatculos divertidos y originales",
+    "foto": "img/madero.png",
+    "enlace": "https://www.instagram.com/bacomunas/reel/C2clXSFL_rk/"
+
+
+    
+},
+{
+    "nombre": "Planos de Puerto Madero",
+    "coords": [-34.61005075183024, -58.366785151023926],
+    "descripcion": "Spot con planos inclinados en bajada, bordes y flat",
+    "foto": "img/planos.png"
+    
+
+},
+{
+    "nombre": "La loma de Coto y wallrides",
+    "coords": [
+        -34.719581, -58.261959],
+    "descripcion": "Spot con planos con wallride y loma con salto a la calle",
+    "foto": "img/coto2.jpg"
+    
+
+},
+
+{
+    "nombre": "Biblioteca Mariano Moreno",
+    "coords": [
+        -34.710952, -58.283424
+],
+    "descripcion": "Spot con Rampa y barana y gap con baranda, piso aspero",
+    "foto": "img/moreno.jpg"
+    
+
+},
+
+{
+    "nombre": "Barracas skatepark",
+    "coords": [
+        -34.633706086504304, -58.37853365015255
+],
+    "descripcion": "Skatepark en bajada con street y sector de bowl",
+    "foto": "img/barracas.png"
+    
+
+},
+{
+    "nombre": "Skatepark La paz, Berazategui",
+    "coords": [
+        -34.77217586768723, -58.20655234592665
+],
+    "descripcion": "Skatepark de cemento con plano inclinado y obstaculos de street",
+    "foto": "img/lapaz.png"
+    
+
+},
+{
+    "nombre": "Los planos de Huergo",
+    "coords": [
+        -34.609780746890245, -58.36744732105437
+],
+    "descripcion": "Spot de street de planos con borde",
+    "foto": "img/aduana.png"
+    
+
+},
+{
+    "nombre": "Converse skate plaza",
+    "coords": [
+        -34.550644778961015, -58.43836505025932
+],
+    "descripcion": "Skatepark Street, con muchos banks y bordes",
+    "foto": "img/converse.png"
+    
+
+},
+{
+    "nombre": "Skatepark Centenario",
+    "coords": [
+        -34.60761695587227, -58.43389690234802
+],
+    "descripcion": "Skatepark con escaleras, barandas, banks",
+    "foto": "img/centenario.png"
+    
+
+},
+{
+    "nombre": "Skatepark Lugano",
+    "coords": [
+        -34.68584955076127, -58.46381486001601
+],
+    "descripcion": "Skatepark con escaleras, barandas, banks",
+    "foto": "img/lugano.png"
+    
+
+},{
+    "nombre": "Skatepark Villa Luro",
+    "coords": [
+        -34.636684756536745, -58.495593528836174
+],
+    "descripcion": "Skatepark muy completo bajo autopista, con bowl, street y amplias dimensiones",
+    "foto": "img/luro.png",
+    "enlace": "https://www.instagram.com/unapistadeskateenvillaluro/?hl=es"
+
+    
+
+}
+
+
+]
