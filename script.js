@@ -30,11 +30,11 @@ fetch("lugares.json")
     });
 
 
-// Capturar el evento de envío del formulario de búsqueda
-document.getElementById('busqueda').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar el envío del formulario
 
-    // Obtener el valor del campo de búsqueda
+document.getElementById('busqueda').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    
     var searchTerm = document.getElementById('busquedaInput').value.trim().toLowerCase();
 
 if (searchTerm == ""){
@@ -42,12 +42,12 @@ if (searchTerm == ""){
     
 }
 
-    // Buscar el lugar en el array de lugares
+   
     var lugarEncontrado = lugares.find(function(lugar) {
         return lugar.nombre.toLowerCase().includes(searchTerm);
     });
 
-    // Centrar el mapa en el lugar encontrado, si existe
+    
     if (lugarEncontrado) {
         map.setView(lugarEncontrado.coords, 16);
     } 
