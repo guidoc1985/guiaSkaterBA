@@ -27,3 +27,56 @@ h2{
     display: flex;
 
 }
+
+.titulo{
+    color: bisque;
+    margin-left: 45%;
+    margin-top: 2%;
+}
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    
+}
+
+.login {
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 300px; 
+    text-align: center; 
+}
+
+.input {
+    width: 100%; /* Los inputs ocupan todo el ancho disponible */
+    padding: 10px; /* Espacio interno de los inputs */
+    margin-top: 10px; /* Espacio entre los inputs */
+    border: 1px solid #ccc; /* Borde de los inputs */
+    border-radius: 5px; /* Bordes redondeados de los inputs */
+    box-sizing: border-box; /* Para que el padding no afecte al ancho */
+}
+
+input::placeholder {
+    color: #999; /* Color del texto del placeholder */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.titulo2{
+    margin-left: 40%;
+    color: aliceblue;
+}
+
+.button{
+    background-color: green;
+    color: black;
+    border-color: green;
+    border-radius: 3px;
+}

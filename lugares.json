@@ -193,7 +193,46 @@
 
     
 
+},
+{
+    "nombre": "Los planos del Teatro Colón",
+    "coords": [
+        -34.6006031168696, -58.38244956567916
+],
+    "descripcion": "Planos, gap y Rampin de salto",
+    "foto": "img/colon.png",
+    "enlace": "https://www.facebook.com/dcshoes.ar/photos/alexis_sm4l-switch-fs-heelflip-en-el-teatro-col%C3%B3n-durante-el-rodaje-del-dc-latam/3744714255559232/"
+
+    
+
+},
+{
+    "nombre": "El ministerio",
+    "coords": [
+        -34.6088554936747, -58.370119375802105
+],
+    "descripcion": "Escalera y gap con borde",
+    "foto": "img/economia.png",
+    "enlace": "https://www.instagram.com/amerika.sb/reel/C1FxgR4xzaA/"
+
+    
+
+},
+{
+    "nombre": "La doble de Afip",
+    "coords": [
+        -34.608946561572886, -58.371558296936264
+],
+    "descripcion": "Escalera doble",
+    "foto": "img/doble.png"
+   
+
+    
+
 }
+
+
+
 
 
 ]

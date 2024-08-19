@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Crear el mapa y establecer la vista inicial en Buenos Aires
+    
     var map = L.map('map').setView([-34.61, -58.38], 13);
 
-    // Añadir una capa de mapa de OpenStreetMap
+    
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     var customIcon = L.icon({
         iconUrl: "img/skateboard.png" ,
-        iconSize: [25, 41], // Tamaño del icono
-        iconAnchor: [12, 41], // Punto de anclaje del icono
-        popupAnchor: [1, -34] // Punto de anclaje del popup
+        iconSize: [25, 41], 
+        iconAnchor: [12, 41], 
+        popupAnchor: [1, -34] 
     });
 
 

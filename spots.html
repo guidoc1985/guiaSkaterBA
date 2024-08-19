@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./libs/css/bootstrap.min.css">
+    <title>Guia skater BA</title>
+    
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg  bg-black">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img class="logo" src="./img/LOGO.png" alt="logo">
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link active text-white fuente-principal" aria-current="page" href="login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white fuente-principal" aria-current="page" href="registrate.html">Crear usuario</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white fuente-principal" aria-current="page" href="spots.html">Crear spot</a>
+              </li>
+ 
+        
+            </ul>
+             
+         
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           
+          
+          </div>
+        </div>
+      </nav>
+
+      <h1 class="titulo2">Crear Spot</h1>
+
+    <div class="formulario">
+    <form action="" class="login">
+        <label for="nombre">Nombre del spot</label>
+        <input class="input" type="text" placeholder="Ingresa el nombre del spot " id="nombre">
+        <br><br>
+        <label for="descripcion">Descripción del spot</label>
+        <textarea class="input" type="text" placeholder="Ingresa una descripción" id="descripcion"></textarea>
+        <label for="coordenadas">Coordenadas</label>
+        <input class="input" type="number" placeholder="Ingresa las coordenadas (google maps)" id="coordenadas">
+        <label for="Imagen">Imagen</label>
+        <input class="input" type="file" placeholder="ingresa una imagen" id="imagen">
+        <br>
+        <br>
+        <button class="button">Enviar</button>
+    </form>
+</div>
+
+    
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./libs/js/main.js"></script>
+    <script src="./libs/js/bootstrap.bundle.min.js"></script>
+  
+    <script src="script.js"></script>
+</body>
+</html>
