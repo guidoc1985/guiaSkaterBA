@@ -1,0 +1,196 @@
+#map {
+    height: 80vh;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+body{
+    background-image:url(img/pexels-markusspiske-2004166.jpg);
+    
+}
+
+footer{
+    background-color: black;
+}
+
+h2{
+    color: aliceblue;
+    font-size: x-large;
+    align-items: center;
+    margin-left: 5%;
+    padding: 5%;
+}
+
+#busqueda{
+    margin-left: 30%;
+    display: flex;
+
+}
+
+.titulo{
+    color: bisque;
+    margin-left: 45%;
+    margin-top: 2%;
+    text-shadow: 
+    1px 1px 0px black,   /* Sombra a la derecha-abajo */
+    -1px 1px 0px black,  /* Sombra a la izquierda-abajo */
+    1px -1px 0px black,  /* Sombra a la derecha-arriba */
+    -1px -1px 0px black; /* Sombra a la izquierda-arriba */
+}
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180vh;
+    
+}
+
+.formulario5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180vh;
+    
+}
+
+a[href="usersUpdate.html"] {
+    text-decoration:none; /* Elimina el subrayado del enlace */
+  }
+
+.formulario3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    
+}
+.titulo4{
+    margin-left: 35%;
+    color: bisque;
+    text-shadow: 
+    1px 1px 0px black,   /* Sombra a la derecha-abajo */
+    -1px 1px 0px black,  /* Sombra a la izquierda-abajo */
+    1px -1px 0px black,  /* Sombra a la derecha-arriba */
+    -1px -1px 0px black; /* Sombra a la izquierda-arriba */
+}
+
+.login {
+    margin-top: -25%;
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 300px; 
+    text-align: center; 
+}
+.login3 {
+    margin-top: -55%;
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 300px; 
+    text-align: center; 
+}
+
+.inputEdit{
+    border-radius: 5px;
+    margin-left: 40%;
+    margin-top: 3%;
+}
+.login2 {
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 300px; 
+    text-align: center; 
+}
+
+
+.input {
+    width: 100%; /* Los inputs ocupan todo el ancho disponible */
+    padding: 10px; /* Espacio interno de los inputs */
+    margin-top: 10px; /* Espacio entre los inputs */
+    border: 1px solid #ccc; /* Borde de los inputs */
+    border-radius: 5px; /* Bordes redondeados de los inputs */
+    box-sizing: border-box; /* Para que el padding no afecte al ancho */
+}
+
+input::placeholder {
+    color: #999; /* Color del texto del placeholder */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.titulo2{
+    margin-left: 41%;
+    color:bisque;
+    text-shadow: 
+    1px 1px 0px black,   /* Sombra a la derecha-abajo */
+    -1px 1px 0px black,  /* Sombra a la izquierda-abajo */
+    1px -1px 0px black,  /* Sombra a la derecha-arriba */
+    -1px -1px 0px black; /* Sombra a la izquierda-arriba */
+    
+}
+
+.button{
+    background-color: green;
+    color: black;
+    border-color: green;
+    border-radius: 3px;
+}
+
+.navbar-brand {
+    padding: 0; /* Elimina cualquier padding del contenedor de la imagen */
+}
+
+.logo {
+    
+    width: auto; 
+    height: 80px; 
+    margin: 0; 
+}
+
+.registrate{
+    color: black;
+}
+#nombreUsuario {
+    color: rgb(10, 139, 92); /* Cambia 'blue' al color que prefieras */
+    margin-left: 10px; /* Ajusta este valor según sea necesario */
+    font-weight: bold; /* Opcional: ajusta el peso de la fuente */
+  }
+  
+  @media (max-width: 768px) {
+    .formulario3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        
+    }
+    .formulario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150vh;
+        
+    }
+    .titulo2{
+        margin-left: 30%;
+    }
+
+    .formulario5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        
+    }
+  }

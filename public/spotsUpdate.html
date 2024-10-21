@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../libs/css/bootstrap.min.css">
+    
+    <title>Guia skater BA</title>
+    
+    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://kit.fontawesome.com/bcacbfb976.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-black">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img class="logo" src="./img/LOGO.png" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white fuente-principal" aria-current="page" href="login.html">
+                  <i class="fa-solid fa-circle-user"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white fuente-principal" aria-current="page" href="spots.html">Crear spot</a>
+              </li>
+              <li>
+                <a href="usersUpdate.html"><span id="nombreUsuario" class="nav-link active fuente-principal"></span></a>
+              </li>
+            </ul>
+       
+          </div>
+        </div>
+      </nav>
+      
+      <h1 class="titulo2">Edita tu Spot</h1>
+<form id="busquedaSpot">
+      <input id="buscarSpots" placeholder="nombre del spot" class="inputEdit">
+      <button  class="btn btn-success">enviar</button>
+    </form>
+
+      <div class="formulario">
+        <form id="spotForm"  action="http://localhost:3000/upload" method="post" class="login2" enctype="multipart/form-data">
+        
+            <label for="nombre">Nombre del spot</label>
+            <input class="input" name="nonmbre_spot" type="text" placeholder="Ingresa el nombre del spot " id="nombre">
+            <br><br>
+            <label for="descripcion">Descripción del spot</label>
+            <textarea class="input" name="descripcion" type="text" placeholder="Ingresa una descripción" id="descripcion"></textarea>
+            <label for="direccion">Dirección del Spot (por ejemplo la que aparece en Google maps)</label>
+            <input class="input"  type="text" id="direccion" placeholder="Ingresa la dirección" required>
+         
+            
+            <br><br>
+            <label for="enlace">Sitio o pagina referido al spot</label>
+            <input class="input" type="text" name="enlace" placeholder="Ingresa un link del spot" id="enlace">
+            <br><br>
+            <label for="Imagen">Imagen</label>
+            <input class="input" name="imagen" accept="image/*"  type="file" placeholder="ingresa una imagen" id="imagen">
+            <br>
+            <br>
+            <button class="button">Enviar</button>
+       
+        <div id="errores" style="color: red;">
+          <ul></ul>
+        </div>
+      </div>
+    </form>
+    </div>
+
+  
+      
+       
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
+    <script src="../libs/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/perfil.js"></script>
+    <script src="./js/spotsUpdate.js"> </script>
+    <script></script>
+</body>
+</html>

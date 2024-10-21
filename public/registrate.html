@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../libs/css/bootstrap.min.css">
+    
+    <title>Guia skater BA</title>
+    
+    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://kit.fontawesome.com/bcacbfb976.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-black">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img class="logo" src="./img/LOGO.png" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white fuente-principal" aria-current="page" href="login.html">
+              <i class="fa-solid fa-circle-user"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white fuente-principal" aria-current="page" href="spots.html">Crear spot</a>
+          </li>
+          <li>
+          <a href="usersUpdate.html"><span id="nombreUsuario" class="nav-link active fuente-principal"></span></a>
+        </li>
+        </ul>
+       
+      
+      </div>
+    </div>
+  </nav>
+  
+
+      <h1 class="titulo2">Crear Usuario</h1>
+
+    <div id="registerForm"  class="formulario">
+    <form id="userForm"  action="http://localhost:3000/users/create" method="post" class="login">
+    
+        <label for="nombre">Nombre</label>
+        <input class="input" type="text" name="nombre" placeholder="Ingresa tu nombre" id="nombre">
+        <br><br>
+        <label for="apellido">Apellido</label>
+        <input class="input" type="text" name="apellido" placeholder="Ingresa tu apellido" id="apellido">
+        <label for="email">Email</label>
+        <input class="input" type="email" name="email" placeholder="Ingresa tu email" id="email">
+        <label for="contraseña">Contraseña</label>
+        <input class="input" type="password" name="contraseña" placeholder="crea un password" id="contraseña">
+        <br>
+        <br>
+        <div id="errores" style="color: red;">
+          <ul></ul>
+        </div>
+        <button class="button">Enviar</button>
+     
+        <br><br>
+        <a class="registrate" aria-current="page" href="login.html" style="color: black;"> o logueate!</a>
+      
+    </form>
+   
+   
+</div>
+
+
+    
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <script src="../libs/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+    <script src="./js/script.js"></script>
+</body>
+</html>
