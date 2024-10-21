@@ -23,30 +23,15 @@ app.use('/libs', express.static(path.join(__dirname, 'libs')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
-const dbConfig = {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME,
-};
+const connection = mysql.createConnection(process.env.JAWSDB_URL);
 
-async function connectToDatabase() {
-    try {
-        // Establece la conexión automáticamente con createConnection
-        const connection = await mysql.createConnection(dbConfig);
-        console.log('Conectado a la base de datos.');
-
-        // Aquí puedes realizar consultas, por ejemplo:
-        // const [rows] = await connection.query('SELECT * FROM usuarios');
-        
-        await connection.end(); // Cierra la conexión una vez que hayas terminado
-    } catch (err) {
-        console.error('Error al conectar a la base de datos:', err);
+connection.connect(err => {
+    if (err) {
+      console.error('Error connecting: ' + err.stack);
+      return;
     }
-}
-
-connectToDatabase();
+    console.log('Connected as id ' + connection.threadId);
+  });
 
 
 app.get('/', (req, res) => {
