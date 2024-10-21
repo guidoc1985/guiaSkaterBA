@@ -33,5 +33,9 @@
     "sequelize": "^6.37.3",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.12.4"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
   }
 }

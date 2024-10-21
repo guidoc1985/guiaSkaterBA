@@ -11,7 +11,7 @@ const verificarAutenticacion = require("./public/js/auth")
 const nodemailer = require("nodemailer");
 const { camelize } = require("sequelize/lib/utils");
 require('dotenv').config();
-const dbUrl = new URL(process.env.JAWSDB_URL);
+
 
 
 
@@ -30,16 +30,19 @@ const dbConfig = {
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
   };
-  
+
   const connection = mysql.createConnection(dbConfig);
-  
+
+  // Conectar a la base de datos
   connection.connect((err) => {
-    if (err) {
-      console.error('Error al conectar a la base de datos: ' + err.stack);
-      return;
-    }
-    console.log('Conectado a la base de datos como ID ' + connection.threadId);
+      if (err) {
+          console.error('Error al conectar a la base de datos: ' + err.stack);
+          return;
+      }
+      console.log('Conectado a la base de datos como ID ' + connection.threadId);
   });
+  
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'registrate.html'));
