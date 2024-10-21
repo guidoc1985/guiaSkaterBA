@@ -23,25 +23,20 @@ app.use('/libs', express.static(path.join(__dirname, 'libs')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
-const dbConfig = {
+const connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME,
-  };
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+});
 
-  const connection = mysql.createConnection(dbConfig);
-
-  // Conectar a la base de datos
-  connection.connect((err) => {
-      if (err) {
-          console.error('Error al conectar a la base de datos: ' + err.stack);
-          return;
-      }
-      console.log('Conectado a la base de datos como ID ' + connection.threadId);
-  });
-  
+connection.connect((err) => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the database!');
+});
 
 
 app.get('/', (req, res) => {
