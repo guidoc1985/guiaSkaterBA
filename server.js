@@ -23,21 +23,23 @@ app.use('/libs', express.static(path.join(__dirname, 'libs')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
-const connection = mysql.createConnection({
-    host: dbUrl.hostname, // Host de la base de datos
-    user: dbUrl.username, // Usuario de la base de datos
-    password: dbUrl.password, // Contraseña de la base de datos
-    database: dbUrl.pathname.substring(1), // Nombre de la base de datos (remueve la barra inicial "/")
-    port: 3306 // El puerto, generalmente 3306 para MySQL
-});
-
-connection.connect((err) => {
+const dbConfig = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME,
+  };
+  
+  const connection = mysql.createConnection(dbConfig);
+  
+  connection.connect((err) => {
     if (err) {
-        console.error('Error conectando a la base de datos:', err.stack);
-        return;
+      console.error('Error al conectar a la base de datos: ' + err.stack);
+      return;
     }
-    console.log('Conectado a la base de datos como id ' + connection.threadId);
-});
+    console.log('Conectado a la base de datos como ID ' + connection.threadId);
+  });
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'registrate.html'));
