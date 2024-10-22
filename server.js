@@ -31,22 +31,7 @@ const dbConfig = {
     database: process.env.DB_NAME,
 };
 
-async function connectToDatabase() {
-    try {
-        // Establece la conexión automáticamente con createConnection
-        const connection = await mysql.createConnection(dbConfig);
-        console.log('Conectado a la base de datos.');
 
-        // Aquí puedes realizar consultas, por ejemplo:
-        // const [rows] = await connection.query('SELECT * FROM usuarios');
-        
-        await connection.end(); // Cierra la conexión una vez que hayas terminado
-    } catch (err) {
-        console.error('Error al conectar a la base de datos:', err);
-    }
-}
-
-connectToDatabase();
 
 
 app.get('/', (req, res) => {
