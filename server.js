@@ -549,6 +549,7 @@ res.status(400).json({ success: false, message: 'Token inválido o expirado' })
 
 
  
-app.listen(3000, () => {
-    console.log("Servidor corriendo en el puerto 3000");
+const PORT = process.env.PORT || 3000; // Usa el puerto proporcionado por Heroku o 3000 para desarrollo local.
+app.listen(PORT, () => {
+    console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
