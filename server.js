@@ -29,6 +29,7 @@ const dbConfig = {
     password: process.env.DB_PASS,
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
+    connectTimeout: 20000, // 10 segundos
     ssl: {
         rejectUnauthorized: false // Para permitir conexiones sin validar el certificado
       }
