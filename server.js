@@ -30,13 +30,15 @@ const dbConfig = {
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
     connectTimeout: 20000, // 10 segundos
-    ssl: {
-        rejectUnauthorized: false // Para permitir conexiones sin validar el certificado
-      }
-};
+    ssl: false // Prueba deshabilitando SSL para ver si ese es el problema
+  };
+  
 
 
-
+  console.log('Host:', process.env.DB_HOST);
+  console.log('User:', process.env.DB_USER);
+  console.log('Database:', process.env.DB_NAME);
+  console.log('Port:', process.env.DB_PORT);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'registrate.html'));
