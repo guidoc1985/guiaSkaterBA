@@ -4,6 +4,11 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    const baseUrl = window.location.origin.includes('localhost')
+    ? 'http://localhost:3000'
+    : 'https://mighty-basin-21232-3982f0b02cea.herokuapp.com';
+
+
     //manejo para el swall fire del login
     const loginForm = document.getElementById("loginForm");
 
@@ -13,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const email = document.getElementById("email").value;
             const contraseña = document.getElementById("password").value;
 
-            fetch('http://localhost:3000/api/login', {
+            fetch(`${baseUrl}/api/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -147,7 +152,7 @@ if(logoutButton){
             const email = document.getElementById("email").value;
             const contraseña = document.getElementById("contraseña").value;
 
-            fetch('http://localhost:3000/users/create', {
+            fetch(`${baseUrl}/users/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
