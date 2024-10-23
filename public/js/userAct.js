@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const userId = localStorage.getItem('userId');
  
  if (userId) {
-    fetch(`http://localhost:3000/api/user/${userId}`)  
+    fetch(`https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/user/${userId}`)  
         .then(response => response.json())
         .then(user => {
             document.getElementById('nombre').value = user.nombre;
@@ -28,7 +28,7 @@ if (userId) {
         const email = document.getElementById('email').value;
         const contraseña = document.getElementById('contraseña').value;
 
-        fetch(`http://localhost:3000/api/userUpdate/${userId}`, {
+        fetch(`https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/userUpdate/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ if (userId) {
 
 
 // Hacer la solicitud para obtener los datos del usuario
-fetch(`http://localhost:3000/api/getUser/${userId}`)
+fetch(`https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/getUser/${userId}`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Error al obtener los datos del usuario');
@@ -73,6 +73,6 @@ fetch(`http://localhost:3000/api/getUser/${userId}`)
 // Configurar el formulario de actualización de usuario
 const updateForm = document.getElementById('updateForm');
 if (updateForm) {
-    updateForm.action = `http://localhost:3000/api/userUpdate/${userId}`;
+    updateForm.action = `https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/userUpdate/${userId}`;
 }
 })

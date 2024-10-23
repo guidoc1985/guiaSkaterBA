@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
+    const baseUrl = window.location.origin.includes('localhost')
+    ? 'http://localhost:3000'
+    : 'https://mighty-basin-21232-3982f0b02cea.herokuapp.com';
     // Mapa
     var map = L.map('map').setView([-34.61, -58.38], 13);
 
@@ -15,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var lugares = [];
 
-    fetch("http://localhost:3000/api/spots")
+    fetch(`${baseUrl}/api/spots`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);

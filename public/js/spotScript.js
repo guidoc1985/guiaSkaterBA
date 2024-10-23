@@ -65,7 +65,7 @@ formularioSpot.addEventListener("submit", function(e) {
             formData.append('lng', lng);
 
             
-            fetch('http://localhost:3000/upload', {
+            fetch('https://mighty-basin-21232-3982f0b02cea.herokuapp.com/upload', {
                 method: 'POST',
                 body: formData
             })

@@ -10,7 +10,7 @@ document.getElementById("botonRec").addEventListener("click", function () {
         return;
     }
 
-    fetch("http://localhost:3000/users/recPass", {
+    fetch("https://mighty-basin-21232-3982f0b02cea.herokuapp.com/users/recPass", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

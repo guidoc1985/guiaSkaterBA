@@ -21,7 +21,7 @@ document.getElementById("botonNewPass").addEventListener("click", function () {
         return;
     }
 
-    fetch("http://localhost:3000/users/changePassword", {
+    fetch("https://mighty-basin-21232-3982f0b02cea.herokuapp.com/users/changePassword", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

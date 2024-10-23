@@ -269,7 +269,7 @@ app.get('/verify', async (req, res) => {
         await connection.execute('UPDATE usuarios SET verificado = ? WHERE email = ?', [true, email]);
         await connection.end();
 
-        const loginLink = "http://localhost:3000/login";
+        const loginLink = "https://mighty-basin-21232-3982f0b02cea.herokuapp.com/login";
 
      res.send(`Correo verificado con éxito! Ahora podés iniciar sesión en Mapa Skater siguiendo el link. <a href="${loginLink}">Iniciá sesión</a>`);
     } catch (error) {
@@ -487,7 +487,7 @@ app.post('/users/recPass', async (req, res) => {
         }
 
         const resetToken = jwt.sign({email}, "secreto", {expiresIn: "1h"})
-         const resetPassLink = `http://localhost:3000/resetPass.html?token=${resetToken}`;
+         const resetPassLink = `https://mighty-basin-21232-3982f0b02cea.herokuapp.com/resetPass.html?token=${resetToken}`;
 
 
         const transporter = nodemailer.createTransport({

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         spotNombre = encodeURIComponent(busquedaInput.trim());
 
-        fetch(`http://localhost:3000/api/getSpot/${spotNombre}`)
+        fetch(`https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/getSpot/${spotNombre}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok: " + response.statusText);
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 // Enviar el formulario al backend
-                fetch(`http://localhost:3000/api/spotUpdate/${spotNombre}`, {
+                fetch(`https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/spotUpdate/${spotNombre}`, {
                     method: 'PUT',
                     body: formData
                 })
