@@ -208,7 +208,7 @@ app.post('/users/create', async (req, res) => {
             }
         });
 
-        const verificationLink = `http://localhost:3000/verify?token=${verificationToken}`;
+        const verificationLink = `https://mighty-basin-21232-3982f0b02cea.herokuapp.com/verify?token=${verificationToken}`;
         const mailOptions = {
             from: 'guidocardama@gmail.com',
             to: req.body.email,
