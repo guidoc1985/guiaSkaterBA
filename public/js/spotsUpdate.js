@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 formData.append('nonmbre_spot', nombre);
                 formData.append('descripcion', descripcion);
                 formData.append('direccion', direccion);
-                formData.append('lat', lat);  // Agregar latitud al formulario
-                formData.append('lng', lon);  // Agregar longitud al formulario
+                formData.append('lat', lat);  
+                formData.append('lng', lon);  
                 formData.append('enlace', enlace);
                 if (imagen) {
                     formData.append('imagen', imagen);

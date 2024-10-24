@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Verificar si el usuario está en 'spots.html'
+    
     if (window.location.pathname.endsWith('spots.html')) {
-      const isAuthenticated = localStorage.getItem('token'); // Verifica si el token está almacenado
+      const isAuthenticated = localStorage.getItem('token'); 
   
       if (!isAuthenticated) {
         Swal.fire({
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
           text: "Necesitas crear un usuario y loguearte para crear el spot!",
           confirmButtonText: 'OK'
         }).then(() => {
-          // Redirige a la página de login después de que el usuario cierre el SweetAlert
+        
           window.location.href = 'registrate.html'; 
         });
       }

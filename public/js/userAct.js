@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     alert('Usuario no logueado');
 }
 
-// Set dynamic form action
+
 if (userId) {
     document.getElementById('updateForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -51,7 +51,7 @@ if (userId) {
 
 
 
-// Hacer la solicitud para obtener los datos del usuario
+
 fetch(`https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/getUser/${userId}`)
     .then(response => {
         if (!response.ok) {

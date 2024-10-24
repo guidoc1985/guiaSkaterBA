@@ -1,6 +1,6 @@
 const express = require("express");
 const mysql = require("mysql2/promise");
-const cors = require("cors");  // Asegúrate de incluir CORS
+const cors = require("cors");  
 const app = express();
 const multer = require('multer');
 const path = require("path");
@@ -15,8 +15,8 @@ require('dotenv').config();
 
 
 
-app.use(cors());  // Usa CORS
-app.use(express.json());  // Middleware para analizar JSON
+app.use(cors());  
+app.use(express.json());  
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use('/libs', express.static(path.join(__dirname, 'libs')));
@@ -29,8 +29,8 @@ const dbConfig = {
     password: process.env.DB_PASS,
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
-    connectTimeout: 20000, // 10 segundos
-    ssl: false // Prueba deshabilitando SSL para ver si ese es el problema
+    connectTimeout: 20000, 
+    ssl: false 
   };
   
 
@@ -49,7 +49,7 @@ const authenticateToken = (req, res, next) => {
     if (!token) return res.status(401).send('Acceso denegado');
 
     try {
-        const verified = jwt.verify(token, 'secreto');
+        const verified = jwt.verify(token, process.env.JWT_SECRET);
         req.user = verified;
         next();
     } catch (error) {
@@ -191,7 +191,7 @@ app.post('/users/create', async (req, res) => {
    
 
         const hashedPassword = await bcrypt.hash(req.body.contraseña, 10);
-        const verificationToken = jwt.sign({ email: req.body.email }, 'secreto', { expiresIn: '1h' });
+        const verificationToken = jwt.sign({ email: req.body.email },process.env.JWT_SECRET, { expiresIn: '1h' });
   
         
       
@@ -206,8 +206,8 @@ app.post('/users/create', async (req, res) => {
         const transporter = nodemailer.createTransport({
             service: 'gmail', 
             auth: {
-                user: 'guidocardama@gmail.com',
-                pass: 'abwr cyxj qwnh lquc',
+                user: process.env.GMAIL_USER,
+                pass:process.env.GMAIL_PASS,
             },
             tls: {
                 rejectUnauthorized: false
@@ -216,7 +216,7 @@ app.post('/users/create', async (req, res) => {
 
         const verificationLink = `https://mighty-basin-21232-3982f0b02cea.herokuapp.com/verify?token=${verificationToken}`;
         const mailOptions = {
-            from: 'guidocardama@gmail.com',
+            from: process.env.GMAIL_USER,
             to: req.body.email,
             subject: 'Registro Mapa Skater',
             html: `<p>Por favor, haz clic en el siguiente enlace para verificar tu cuenta e ingresar a MAPA SKATER:</p>
@@ -254,7 +254,7 @@ app.get('/verify', async (req, res) => {
 
     try {
         // Verificar el token
-        const decoded = jwt.verify(token, 'secreto');
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const email = decoded.email;
 
         const connection = await mysql.createConnection(dbConfig);
@@ -283,32 +283,32 @@ app.get('/verify', async (req, res) => {
 
 
 app.put('/api/userUpdate/:id', async (req, res) => {
-    const userId = req.params.id; // Obtén el ID del usuario desde la URL
-    const { nombre, apellido, email, contraseña } = req.body; // Obtén los datos del cuerpo de la solicitud
+    const userId = req.params.id; 
+    const { nombre, apellido, email, contraseña } = req.body; 
 
     try {
         const connection = await mysql.createConnection(dbConfig);
 
-        // Construir la consulta UPDATE
+        
         let query = 'UPDATE usuarios SET nombre = ?, apellido = ?, email = ?';
         let params = [nombre, apellido, email];
 
-        // Solo agregar la actualización de la contraseña si se proporciona
+        
         if (contraseña) {
             const hashedPassword = await bcrypt.hash(contraseña, 10);
             query += ', contraseña = ?';
             params.push(hashedPassword);
         }
 
-        query += ' WHERE idusuarios = ?'; // Añadir la condición WHERE
-        params.push(userId); // Añadir el ID del usuario a los parámetros
+        query += ' WHERE idusuarios = ?'; 
+        params.push(userId); 
 
-        // Ejecutar la consulta
+        
         const [result] = await connection.execute(query, params);
 
         await connection.end();
 
-        // Verificar si se actualizó algún registro
+        
         if (result.affectedRows > 0) {
             res.json({ message: 'Usuario actualizado correctamente' });
         } else {
@@ -323,10 +323,10 @@ app.put('/api/userUpdate/:id', async (req, res) => {
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'uploads/'); // Directorio donde se almacenarán los archivos
+      cb(null, 'uploads/'); 
     },
     filename: function (req, file, cb) {
-      cb(null, Date.now() + path.extname(file.originalname)); // Nombre del archivo
+      cb(null, Date.now() + path.extname(file.originalname)); 
     }
   });
   
@@ -351,8 +351,8 @@ const storage = multer.diskStorage({
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'guidocardama@gmail.com',
-                pass: 'abwr cyxj qwnh lquc',  
+                user: process.env.GMAIL_USER,
+                pass: process.env.GMAIL_PASS,  
             },
             tls: {
                 rejectUnauthorized: false
@@ -360,8 +360,8 @@ const storage = multer.diskStorage({
         });
 
         const mailOptions = {
-            from: 'guidocardama@gmail.com',
-            to: 'guidocardama@gmail.com',
+            from: process.env.GMAIL_USER,
+            to: process.env.GMAIL_USER,
             subject: 'Nuevo spot creado',
             html: `<p>Se ha creado un nuevo spot con los siguientes detalles:</p>
                    <ul>
@@ -456,7 +456,7 @@ const storage = multer.diskStorage({
             return res.status(400).send('Contraseña incorrecta');
         }
 
-        const token = jwt.sign({ id: user.idusuarios, nombre: user.nombre }, 'secreto', { expiresIn: '1h' });
+        const token = jwt.sign({ id: user.idusuarios, nombre: user.nombre }, process.env.JWT_SECRET, { expiresIn: '1h' });
         
         console.log("Login exitoso, enviando token:", token);
         res.json({ token, nombre: user.nombre, idusuarios:user.idusuarios });
@@ -486,15 +486,15 @@ app.post('/users/recPass', async (req, res) => {
             return res.status(400).json({ success: false, message: 'correo no registrado' });
         }
 
-        const resetToken = jwt.sign({email}, "secreto", {expiresIn: "1h"})
+        const resetToken = jwt.sign({email},process.env.JWT_SECRET, {expiresIn: "1h"})
          const resetPassLink = `https://mighty-basin-21232-3982f0b02cea.herokuapp.com/resetPass.html?token=${resetToken}`;
 
 
         const transporter = nodemailer.createTransport({
             service: 'gmail', // Puedes cambiar el servicio de correo que prefieras
             auth: {
-                user: 'guidocardama@gmail.com',
-                pass: 'abwr cyxj qwnh lquc',
+                user:process.env.GMAIL_USER,
+                pass:process.env.GMAIL_PASS,
             },
             tls: {
                 rejectUnauthorized: false
@@ -503,10 +503,10 @@ app.post('/users/recPass', async (req, res) => {
 
         
         const mailOptions = {
-            from: 'guidocardama@gmail.com',
+            from:process.env.GMAIL_USER,
             to: email,
             subject: 'Cambio contraseña Mapa Skater',
-            html: `<p>Por favor, haz clic en el siguiente enlace para cambiar la contraseña de  MAPA SKATER:</p>
+            html: `<p>Por favor, hacé clic en el siguiente enlace para cambiar la contraseña de  MAPA SKATER:</p>
                    <a href="${resetPassLink}">Cambiar contraseña</a>`,
         };
 
@@ -536,7 +536,7 @@ app.post("/users/changePassword", async (req, res)=>{
     const {token, newPassword} = req.body;
 
 try{
-    const decoded = jwt.verify(token, 'secreto');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const email = decoded.email;
 
         const hashedPassword = await bcrypt.hash(newPassword, 10);
@@ -555,7 +555,7 @@ res.status(400).json({ success: false, message: 'Token inválido o expirado' })
 
 
  
-const PORT = process.env.PORT || 3000; // Usa el puerto proporcionado por Heroku o 3000 para desarrollo local.
+const PORT = process.env.PORT || 3000; 
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
