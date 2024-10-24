@@ -3,6 +3,8 @@ const mysql = require("mysql2/promise");
 const cors = require("cors");  
 const app = express();
 const multer = require('multer');
+const multerS3 = require('multer-s3');
+const aws = require('aws-sdk');
 const path = require("path");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -32,7 +34,12 @@ const dbConfig = {
     connectTimeout: 20000, 
     ssl: false 
   };
-  
+
+  const s3 = new AWS.S3({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION // Ejemplo: 'us-east-1'
+});
 
 
   console.log('Host:', process.env.DB_HOST);
@@ -330,7 +337,9 @@ const storage = multer.diskStorage({
     }
   });
   
-  const upload = multer({ storage: storage });
+  const upload = multer({
+    storage: multer.memoryStorage() // Usa almacenamiento en memoria
+});
 
 
 
@@ -339,11 +348,22 @@ const storage = multer.diskStorage({
         if (!req.file) {
             return res.status(400).json({ error: 'La imagen es obligatoria' });
         }
+
+        const params = {
+            Bucket: process.env.AWS_BUCKET_NAME,
+            Key: `uploads/${Date.now()}_${req.file.originalname}`, // Nombre de archivo único
+            Body: req.file.buffer, // Utiliza el buffer del archivo
+            ContentType: req.file.mimetype // Tipo de contenido
+        };
+
+        const uploadResult = await s3.upload(params).promise();
+        const imageUrl = uploadResult.Location; // URL de la imagen en S3
+
         const connection= await mysql.createConnection(dbConfig);
 
         const result = await connection.execute(
             'INSERT INTO spots (nonmbre_spot, coordenada, descripcion, imagen, enlace) VALUES (?, POINT(?, ?), ?, ?, ?)',
-      [req.body.nonmbre_spot, req.body.lat, req.body.lng, req.body.descripcion, req.file.filename, req.body.enlace]
+      [req.body.nonmbre_spot, req.body.lat, req.body.lng, req.body.descripcion, req.file.filename,imageUrl, req.body.enlace]
         );
         await connection.end();
         res.json({ success: true, message: 'spot registrado exitosamente' });

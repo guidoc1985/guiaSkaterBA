@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const userId = localStorage.getItem('userId');
 
 
-// Set dynamic form action
+
 if (userId) {
     document.getElementById('updateForm').addEventListener('submit', function(event) {
         event.preventDefault();
