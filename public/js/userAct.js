@@ -50,26 +50,6 @@ if (userId) {
 }
 
 
-
-
-fetch(`https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/getUser/${userId}`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Error al obtener los datos del usuario');
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Rellenar los campos del formulario con los datos del usuario
-        document.getElementById('nombre').value = data.nombre || '';
-        document.getElementById('apellido').value = data.apellido || '';
-        document.getElementById('email').value = data.email || '';
-    })
-    .catch(error => {
-        console.error('Error al cargar los datos del usuario:', error);
-        alert('Error al cargar los datos del usuario');
-    });
-
 // Configurar el formulario de actualización de usuario
 const updateForm = document.getElementById('updateForm');
 if (updateForm) {
