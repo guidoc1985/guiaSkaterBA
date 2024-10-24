@@ -1,11 +1,14 @@
- //actualizar usuarios
- 
- 
 document.addEventListener('DOMContentLoaded', function () {
 
     const userId = localStorage.getItem('userId');
- 
- if (userId) {
+    
+    // Verificar si hay un usuario logueado
+    if (!userId) {
+        alert('Usuario no logueado');
+        return;
+    }
+    
+    // Fetch para obtener los datos del usuario
     fetch(`https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/user/${userId}`)  
         .then(response => response.json())
         .then(user => {
@@ -14,12 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('email').value = user.email;
         })
         .catch(error => console.error('Error al cargar los datos del usuario:', error));
-} else {
-    alert('Usuario no logueado');
-}
 
-
-if (userId) {
+    // Manejar el envío del formulario de actualización
     document.getElementById('updateForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -47,12 +46,4 @@ if (userId) {
             console.error('Error al actualizar el perfil:', error);
         });
     });
-}
-
-
-// Configurar el formulario de actualización de usuario
-const updateForm = document.getElementById('updateForm');
-if (updateForm) {
-    updateForm.action = `https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/userUpdate/${userId}`;
-}
-})
+});
