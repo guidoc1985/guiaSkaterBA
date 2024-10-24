@@ -4,19 +4,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const userId = localStorage.getItem('userId');
- 
- if (userId) {
-    fetch(`https://mighty-basin-21232-3982f0b02cea.herokuapp.com/api/user/${userId}`)  
-        .then(response => response.json())
-        .then(user => {
-            document.getElementById('nombre').value = user.nombre;
-            document.getElementById('apellido').value = user.apellido;
-            document.getElementById('email').value = user.email;
-        })
-        .catch(error => console.error('Error al cargar los datos del usuario:', error));
-} else {
-    alert('Usuario no logueado');
-}
+
 
 // Set dynamic form action
 if (userId) {
